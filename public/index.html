@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Wall Mural</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="space-bg"></canvas>
+
+  <header>
+    <h1>World Wall</h1>
+    <div id="auth-controls">
+      <div id="logged-out-view">
+        <input type="text" id="username-input" placeholder="Username" />
+        <input type="password" id="password-input" placeholder="Password" />
+        <button id="login-btn">Login</button>
+        <button id="register-btn">Register</button>
+      </div>
+      <div id="logged-in-view" style="display: none;">
+        <span id="user-greeting"></span>
+        <button id="decorate-btn">Decorate a portion</button>
+        <button id="logout-btn">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawing Overlay -->
+  <div id="drawing-overlay" style="display: none;">
+    <div id="drawing-modal">
+      <h2>Decorate Your Portion</h2>
+      <canvas id="drawing-canvas" width="400" height="400"></canvas>
+      <div class="drawing-tools">
+        <input type="color" id="color-picker" value="#ffffff">
+        <input type="range" id="brush-size" min="1" max="20" value="5">
+        <button id="clear-btn">Clear</button>
+      </div>
+      <div class="drawing-actions">
+        <button id="cancel-btn">Cancel</button>
+        <button id="save-lock-btn">Save & Lock</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div id="mural-container">
+      <!-- Artworks will be populated here -->
+    </div>
+  </main>
+
+  <script src="animation.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
